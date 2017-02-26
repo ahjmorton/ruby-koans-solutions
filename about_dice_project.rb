@@ -4,10 +4,12 @@ class DiceSet
 
   attr_reader :values
 
+  def initialize 
+    @values = []
+  end
+
   def roll(dice_count) 
-    @values = Array.new(dice_count) do |i|
-      Random.rand(6) + 1
-    end
+    @values = Array.new(dice_count) {|i| Random.rand(6) + 1 }
   end
 end
 
