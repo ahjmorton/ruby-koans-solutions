@@ -14,6 +14,10 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  small_side, mid_side, large_side = [a,b,c].sort
+  unless small_side + mid_side > large_side 
+    raise TriangleError
+  end
   if a == b and b == c
     :equilateral 
   elsif a == b or b == c or a == c
